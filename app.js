@@ -1,4 +1,5 @@
 //variables
+//Declaro todas las variables para su posterior uso.
 var resultado = document.getElementById("resultado");
 var cero = document.getElementById("num-0")
 var uno = document.getElementById("num-1")
@@ -19,36 +20,48 @@ var operandoA;
 var operandoB;
 var operacion;
 
+//Aca estan las funciones, que van a hacer dependiendo el boton que presiones
 cero.onclick = function (e) {
     resultado.textContent = resultado.textContent + "0"
 }
+
 uno.onclick = function (e) {
     resultado.textContent = resultado.textContent + "1"
 }
+
 dos.onclick = function (e) {
     resultado.textContent = resultado.textContent + "2"
 }
+
 tres.onclick = function (e) {
     resultado.textContent = resultado.textContent + "3"
 }
+
 cuatro.onclick = function (e) {
     resultado.textContent = resultado.textContent + "4"
 }
+
 cinco.onclick = function (e) {
     resultado.textContent = resultado.textContent + "5"
 }
+
 seis.onclick = function (e) {
     resultado.textContent = resultado.textContent + "6"
 }
+
 siete.onclick = function (e) {
     resultado.textContent = resultado.textContent + "7"
 }
+
 ocho.onclick = function (e) {
     resultado.textContent = resultado.textContent + "8"
 }
+
 nueve.onclick = function (e) {
     resultado.textContent = resultado.textContent + "9"
 }
+
+//Metodos que voy a usar a la hora de hacer las operaciones aritmeticas
 function limpiar() {
     resultado.textContent = ""
 }
@@ -58,6 +71,16 @@ function resetear() {
     operandoB = 0
     operacion = ""
 }
+function resetear() {
+
+    resultado.textContent = ""
+    operandoA = 0;
+    operandoB = 0;
+    operacion = ""
+}
+
+//Resolver la operacion matematica
+//En este caso con un switch, dependiendo el string de la opercion, al break que entre y la operacion que realize.
 function resolver() {
     var res = 0
     switch (operacion) {
@@ -77,6 +100,8 @@ function resolver() {
     resetear()
     resultado.textContent = res;
 }
+
+//Operaciones que realiza la calculadora
 ce.onclick = function (e) {
     resetear()
 }
@@ -106,10 +131,3 @@ igual.onclick = function (e) {
     resolver()
 }
 
-function resetear() {
-
-    resultado.textContent = ""
-    operandoA = 0;
-    operandoB = 0;
-    operacion = ""
-}
